@@ -1,0 +1,9 @@
+# sed -i.bak leftovers from scripts/update.sh, if it is interrupted
+*.bak
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/

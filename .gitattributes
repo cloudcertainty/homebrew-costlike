@@ -1,0 +1,5 @@
+# Store and check out text as LF everywhere, whatever core.autocrlf says, so a bump
+# edited on Windows does not show every line of the cask as changed.
+* text=auto eol=lf
+
+*.sh text eol=lf
