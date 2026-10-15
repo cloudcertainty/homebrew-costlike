@@ -19,7 +19,8 @@ cask "costlike" do
     end
   end
 
-  depends_on macos: :ventura
+  # Must match the app's own LSMinimumSystemVersion (Electron's floor), or brew audit fails.
+  depends_on macos: :monterey
 
   app "CostLike.app"
 
@@ -37,11 +38,4 @@ cask "costlike" do
     "~/Library/Preferences/com.costlike.app.plist",
     "~/Library/Saved Application State/com.costlike.app.savedState",
   ]
-
-  # Remove once releases are signed with a Developer ID and notarized.
-  caveats <<~EOS
-    CostLike is not yet notarized by Apple, so macOS blocks the first launch.
-    Open it once, then go to System Settings > Privacy & Security and choose
-    "Open Anyway". Each new version asks once more after an upgrade.
-  EOS
 end

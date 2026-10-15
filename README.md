@@ -15,12 +15,11 @@ brew install --cask cloudcertainty/costlike/costlike
 brew upgrade --cask costlike
 ```
 
-Apple silicon Macs get the native arm64 build; Intel Macs get x64. macOS 13
-Ventura or later.
+Apple silicon Macs get the native arm64 build; Intel Macs get x64. macOS 12
+Monterey or later.
 
-CostLike is not yet notarized by Apple, so macOS blocks the first launch of
-each new version. Open it once, then go to **System Settings > Privacy &
-Security** and choose **Open Anyway**.
+Releases are signed with CostLike's Developer ID and notarized by Apple, so
+the app opens on first launch without a Gatekeeper prompt.
 
 To remove the app together with its local database, settings and cache:
 
@@ -95,11 +94,9 @@ brew audit --cask --strict --online costlike
 
 - The cask does **not** contain the app; Homebrew downloads the disk image
   from costlike.com and verifies it against the pinned SHA256.
-- Releases are ad-hoc signed, not notarized. That is fine for a third-party
-  tap. Getting into the main `homebrew/cask` repository would need a Developer
-  ID signature and notarization (Homebrew now requires casks there to pass
-  Gatekeeper), plus enough public use to meet its notability rules.
-- When releases are notarized, remove the `caveats` block from the cask.
+- Releases from v0.11.2 on are Developer ID signed and notarized, which is
+  what Homebrew requires of casks in the main `homebrew/cask` repository.
+  Getting in there still needs enough public use to meet its notability rules.
 - CostLike is proprietary software, used under the
   [CostLike terms](https://costlike.com/terms/). This
   repository's own files (the cask and scripts) are under the Apache License
