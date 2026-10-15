@@ -2,9 +2,9 @@ cask "costlike" do
   arch arm: "arm64", intel: "x64"
 
   # version and both sha256 lines are rewritten by scripts/update.sh; keep each on one line.
-  version "0.10.0"
-  sha256 arm:   "a7d3873d2917fc1c809466d5cdec26a7e396959616310af04b8950e95ee05428",
-         intel: "8051753206c92bac6bc1291e27e25e44e290111f4287f430c90848554c5e62a5"
+  version "0.11.2"
+  sha256 arm:   "6d0247e292daad09f972af45d9b840518fdcb527fb82eb730be25e790d3c90b9",
+         intel: "1c7cf5387ea172cfb2d5594500f31d498ea35e0f66c5b52db3645f450e65a767"
 
   url "https://costlike.com/api/download/v#{version}/CostLike-#{version}-#{arch}.dmg"
   name "CostLike"
